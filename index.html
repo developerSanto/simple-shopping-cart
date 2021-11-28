@@ -25,11 +25,11 @@
 
                      <div class="col-md-5 center-item">
                         <div class="input-group number-spinner">
-                           <button id=minusBtnOne class="btn btn-default"><i class="fas fa-minus"></i></button>
-                           <input id="firstQuantity" type="text" class="form-control text-center" value="1">
-                           <button id="addBtnOne"  class="btn btn-default"><i class="fas fa-plus"></i></button>
+                           <button onclick="handlePhoneChange(false)" class="btn btn-default"><i class="fas fa-minus"></i></button>
+                           <input id="phoneCount" type="text" class="form-control text-center" value="1">
+                           <button onclick="handlePhoneChange(true)" class="btn btn-default"><i class="fas fa-plus"></i></button>
                         </div>
-                        <h5>$<span id="balance">1219</span></h5>
+                        <h5>$<span id="phoneTotal">1219</span></h5>
                         <img src="images/remove.png" alt="" class="remove-item">
                      </div>
                   </div>
@@ -43,12 +43,12 @@
                      </div>
                      <div class="col-md-5 center-item">
                         <div class="input-group number-spinner">
-                           <button class="btn btn-default"><i class="fas fa-minus"></i></button>
-                           <input type="text" class="form-control text-center" value="1">
-                           <button class="btn btn-default"><i class="fas fa-plus"></i></button>
+                           <button onclick="handleCaseChange(false)" class="btn btn-default"><i class="fas fa-minus"></i></button>
+                           <input id="caseCount" type="text" class="form-control text-center" value="1">
+                           <button onclick="handleCaseChange(true)" class="btn btn-default"><i class="fas fa-plus"></i></button>
 
                         </div>
-                        <h5>$59</h5>
+                        <h5>$<span id="caseTotal">59</span></h5>
                         <img src="images/remove.png" alt="" class="remove-item">
                      </div>
                   </div>
@@ -64,9 +64,9 @@
                      </div>
 
                      <div class="col-md-4 status">
-                        <h5>$<span id="subtotal">00</span></h5>
+                        <h5>$<span id="subTotal">1,278</span></h5>
                         <h5>$0</h5>
-                        <h5>$<span id="total">00</span></h5>
+                        <h5>$<span id="total">1,278</span></h5>
                      </div>
                   </div>
                </div>
@@ -77,74 +77,8 @@
          </div>
       </div>
    </section>
-<!-- js code start here -->
-   <script>
-      // first plus btn event handler
-      const addBtnOne = document.getElementById("addBtnOne");
-      addBtnOne.addEventListener("click", function(){
-         const firstQuantity = document.getElementById("firstQuantity").value;
-         const firstQuantityNum = parseInt(firstQuantity);
-         const newQuantityNum = firstQuantityNum + 1;
-         document.getElementById("firstQuantity").value = newQuantityNum;
-
-         // increase current balance
-
-         const balance = document.getElementById("balance").innerText;
-         const balanceNum = parseInt(balance);
-         const newBalance = balanceNum + 1219;
-         document.getElementById("balance").innerText = newBalance;
-
-         // increase subtotal balance
-         const subtotal = document.getElementById("subtotal").innerText;
-         const subtotalNum = parseInt(subtotal);
-         const newSubTotalNum = newBalance;
-         document.getElementById("subtotal").innerText = newSubTotalNum;
-          
-         //increase total balance
-         const total = document.getElementById("total").innerText;
-         const totalNum = parseInt(total);
-         const TotalNum = newBalance;
-         document.getElementById("total").innerText = TotalNum;
-      })
-
-      //first minus btn event handler
-        const minusBtnOne = document.getElementById("minusBtnOne");
-        minusBtnOne.addEventListener("click", function(){
-         const firstQuantity = document.getElementById("firstQuantity").value;
-         const firstQuantityNum = parseInt(firstQuantity);
-         const newQuantityNum = firstQuantityNum - 1;
-         if(newQuantityNum >= 0){
-            document.getElementById("firstQuantity").value = newQuantityNum;
-         }
-         
-         //decrease current balance
-         const balance = document.getElementById("balance").innerText;
-         const balanceNum = parseInt(balance);
-         const newBalance = balanceNum - 1219;
-         if(newBalance >= 0){
-            document.getElementById("balance").innerText = newBalance;
-         }
-
-         //decrease subtotal balance
-         const subtotal = document.getElementById("subtotal").innerText;
-         const subtotalNum = parseInt(subtotal);
-         const decreaseSubTotal = subtotalNum - 1219;
-         const newSubTotalNum = decreaseSubTotal;
-         if(newSubTotalNum >= 0){
-            document.getElementById("subtotal").innerText = newSubTotalNum;
-         }
-         
-         //decrease total balance
-         const total = document.getElementById("total").innerText;
-         const totalNum = parseInt(total);
-         const decreaseTotal = totalNum - 1219;
-         const TotalNum = decreaseTotal;
-         if(TotalNum >= 0){
-            document.getElementById("total").innerText = TotalNum;
-         }
-         
-        })
-   </script>
+   <script src="shopping.js"></script>
+  
 </body>
 
 </html>
